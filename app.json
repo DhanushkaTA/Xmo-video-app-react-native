@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "video_app",
-    "slug": "video_app",
+    "name": "Xmo",
+    "slug": "xmo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "xmo",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
