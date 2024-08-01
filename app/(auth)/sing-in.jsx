@@ -23,7 +23,7 @@ const SingIn = () => {
   return (
     <SafeAreaView className={'bg-primary h-full'}>
       <ScrollView>
-        <View className={`bg-red-400/0 w-full h-full
+        <View className={`bg-red-400/0 w-full min-h-[85vh]
            justify-center px-4 my-6`}>
           
           <Image 

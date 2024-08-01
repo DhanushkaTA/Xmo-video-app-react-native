@@ -40,9 +40,7 @@ const FormField = ({
                         resizeMode="contain"
                     />
             </TouchableOpacity>
-            )
-
-            }
+            )}
       </View>
     </View>
   )
