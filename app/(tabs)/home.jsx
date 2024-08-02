@@ -5,10 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '@/constants';
 import SearchInput from '@/components/SearchInput';
 import Trending from '@/components/Trending';
+import EmptyState from '@/components/EmptyState';
 
 const Home = () => {
   return (
-    <SafeAreaView className={`bg-primary`}>
+    <SafeAreaView className={`bg-primary h-full`}>
       <FlatList
         // data={[{ id: 1}]}
         data={[]}
@@ -63,7 +64,11 @@ const Home = () => {
         )}
         // this property helps us to do somthing if list is empty
         ListEmptyComponent={() => (
-          <Text className={`text-stone-100`}>Empty</Text>
+          <EmptyState
+          title="No videos found"
+          subtitle="It seems like there are no videos available at the moment.Be a first one."
+          
+          />
         )}
       />
     </SafeAreaView>
