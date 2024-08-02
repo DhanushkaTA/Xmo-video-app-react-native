@@ -2,8 +2,10 @@ import { Text, View } from 'react-native'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react';
 import { useFonts } from "expo-font";
+import GlobalProvider from '@/context/GlobalProvider';
 
 SplashScreen.preventAutoHideAsync();
+
 
 const RootLayout = () => {
 
@@ -28,10 +30,13 @@ const RootLayout = () => {
   if(!fontsLoaded) return null;
 
   return (
-    <Stack>
+
+    <GlobalProvider>
+
+      <Stack>
 
       {/* to hidde the upper nav bar */}
-      
+
       <Stack.Screen name='index' options={{
           headerShown:false
         }} 
@@ -51,9 +56,11 @@ const RootLayout = () => {
           headerShown:false
         }} 
       />
-      
 
-    </Stack>
+
+      </Stack>
+
+    </GlobalProvider>
 
   )
 }
