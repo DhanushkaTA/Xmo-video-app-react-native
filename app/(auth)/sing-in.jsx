@@ -29,7 +29,6 @@ const SingIn = () => {
 
     console.log(form.email)
         console.log(form.password)
-        console.log(form.username)
 
     setSubmitting(true);
 
