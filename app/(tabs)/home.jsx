@@ -4,12 +4,14 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { images } from '@/constants';
 import SearchInput from '@/components/SearchInput';
+import Trending from '@/components/Trending';
 
 const Home = () => {
   return (
     <SafeAreaView className={`bg-primary`}>
       <FlatList
-        data={[{ id: 1}]}
+        // data={[{ id: 1}]}
+        data={[]}
         key={(item) => item.id}
         keyExtractor={(item) => item.id}
         renderItem={({item}) => (
@@ -44,7 +46,24 @@ const Home = () => {
 
             <SearchInput />
 
+            <View className={`w-full flex-1 pt-5 pb-8`}>
+
+              <Text className={`text-gray-100 text-lg font-pregular mb-3`}>
+                Latest Videos
+              </Text>
+
+              <Trending 
+                posts={[ { id:1 }, { id:2 }, { id:3 } ] ?? []}
+
+              />
+
+            </View>
+
           </View>
+        )}
+        // this property helps us to do somthing if list is empty
+        ListEmptyComponent={() => (
+          <Text className={`text-stone-100`}>Empty</Text>
         )}
       />
     </SafeAreaView>
