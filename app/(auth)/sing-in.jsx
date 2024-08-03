@@ -34,12 +34,11 @@ const SingIn = () => {
 
     try {
 
-      // set it to globle state
-
       await signIn(form.email, form.password);
+      // set it to globle state
       const result = await getCurrentUser();
-      setUser(result);
-      setIsLogged(true); // set it to globle state
+      setUser(result[0]);
+      setIsLogged(true); 
 
       Alert.alert("Success", "User signin successful.🎉")
 

@@ -8,6 +8,8 @@ import FormField from '@/components/FormField';
 import CustomButton from '@/components/CustomButton';
 import { saveUser } from '@/lib/appwrite';
 
+import { useGlobalContext } from '@/context/GlobalProvider';
+
 const SingUp = () => {
 
   const [form, setForm] = useState({
@@ -16,6 +18,8 @@ const SingUp = () => {
     password: "",
   });
   const [isSubmitting, setSubmitting] = useState(false);
+
+  const {setIsLogged, setUser} = useGlobalContext();
 
 
   const submit = async () => {
@@ -32,8 +36,10 @@ const SingUp = () => {
 
     try {
       const result = await saveUser(form.email, form.password, form.username);
-      // setUser(result);
-      // setIsLogged(true);
+      // set it to globle state
+      
+      setUser(result[0]);
+      setIsLogged(true);
 
       router.replace("/home");
     } catch (error) {

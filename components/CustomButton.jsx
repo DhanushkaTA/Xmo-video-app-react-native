@@ -13,7 +13,7 @@ const CustomButton = ({ title, handlePress, conatainerStyles,
         ${isLoading ? 'opacity-50' : '' }`}
         disabled={isLoading}
     >
-      <Text className={`text-primary font-pergular text-lg ${textStyle}`}>
+      <Text className={`text-primary font-psemibold text-[16px] ${textStyle}`}>
         {title}
       </Text>
     </TouchableOpacity>
