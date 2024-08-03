@@ -5,6 +5,8 @@ import { icons } from '@/constants'
 
 import { Video, ResizeMode } from 'expo-av'
 
+import { useGlobalContext } from '@/context/GlobalProvider'
+
 const VideoCard = ({ 
     video : { 
         title, 
@@ -13,6 +15,8 @@ const VideoCard = ({
         creator: {username, avatar}
     }
 }) => {
+
+    const { user } = useGlobalContext();
         
     const [play, setPlay] = useState(false);
 
@@ -40,7 +44,7 @@ const VideoCard = ({
                     </Text>
 
                     <Text className={`text-gray-100 text-xs font-pregular`} numberOfLines={1}>
-                        {username}
+                        {!username ?  user?.username : username }
                     </Text>
                 </View>
             </View>
