@@ -41,20 +41,21 @@ const TrandingItem = ({ activeItem, item }) => {
                 play ? (
                     <Video
                         source={{ uri: item.video }}
-                        className="w-52 h-72 rounded-[35px] mt-3 bg-white/10"
-                        resizeMethod={
-                            ResizeMode.CONTAIN
-                        }
+                        className="w-52 h-72 rounded-[33px] mt-3 bg-white/10"
+                        resizeMode={ResizeMode.CONTAIN}
                         useNativeControls
                         shouldPlay
                         onPlaybackStatusUpdate={(status) => {
-                            if(status.didJustFinish) {
-                                setPlay(false);
+                            if (status.didJustFinish) {
+                            setPlay(false);
                             }
+                        }}
+                        onError={(err) => {
+                            console.log(err)
                         }}
                     />
                 ) : (
-                    <TouchableOpacity className={`relative justify-center items-center`}
+                    <TouchableOpacity key={item.$id} className={`relative justify-center items-center`}
                         activeOpacity={0.7}
                         onPress={() => setPlay(true)}
                     >

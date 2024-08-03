@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, RefreshControl, Alert } from 'react-native'
+import { View, Text, FlatList, Image, RefreshControl } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -30,8 +30,8 @@ const Home = () => {
       <FlatList
         data={posts}
         // data={[]}
-        key={(item) => item.id}
-        keyExtractor={(item) => item.id}
+        key={(item) => item.$id}
+        keyExtractor={(item) => item.$id}
         renderItem={({item}) => (
           // <Text className={'text-3xl text-white'}>
           //   {item.title}

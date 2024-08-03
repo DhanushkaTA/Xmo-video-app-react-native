@@ -68,6 +68,9 @@ const VideoCard = ({
                                 setPlay(false);
                             }
                         }}
+                        onError={(err) => {
+                            console.log(err)
+                        }}
                     />
             ) : (
                 <TouchableOpacity
